@@ -2,28 +2,82 @@
 Base styles
 ===============*/
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
 
+}
+html{
+ height:100%;
+}
 /*===============
 Type Selectors(body or heading)
 ===============*/
+body{
+  min-height:100%;
+}
 
+main{
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
+input{
+  width: 33%;
+  line-height: 2;
+  padding: 8px;
+  border-radius: 3px;
 
+}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+  max-width: 100%;
+  margin-top: auto;
+}
+
+footer{
+  position: absolute;
+}
 /*===============
 Id Selectors
 ===============*/
 
 
-
-
-
-
 /*===============
 Class Selectors
 ===============*/
+.search{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+}
 
+.inner-wrapper ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.inner-wrapper li{
+  position: relative;
+  overflow: hidden;
+  width: 25%;
+  height: auto;
+}
+
+.inner-wrapper li img{
+  display: block;
+  width: 90%;
+}
+.gray-bar{
+  background-color: silver;
+  height: 8px;
+  width: 100%;
+}
 
 
 /*===============
@@ -42,3 +96,8 @@ Pseudo-class Selectors (interactive)
 /*===============
 Media Queries
 ===============*/
+@media (min-width:768px){
+
+  }
+
+}
