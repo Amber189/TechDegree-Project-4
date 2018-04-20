@@ -1,0 +1,2 @@
+//
+$(".inner-wrapper li").lightbox();

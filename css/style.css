@@ -4,44 +4,58 @@ Base styles
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html{
- height:100%;
+html,
+body{
+  min-height:100%;
+}/*
+body{
+  max-height: 100%;
+} */
+body{
+  text-align: center;
+  margin: 0 auto;
 }
 /*===============
 Type Selectors(body or heading)
 ===============*/
-body{
-  min-height:100%;
-}
+
 
 main{
   margin: 0 auto;
   max-width: 1200px;
+
 }
 
 input{
-  width: 33%;
+  width: 100%;
   line-height: 2;
   padding: 8px;
   border-radius: 3px;
-
 }
 
+
+
+/* takes off default style (bullets and such) */
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0 ;
     padding: 0;
 }
-img{
+
+/* img{
   max-width: 100%;
-  margin-top: auto;
+  margin-top: 15%;
+} */
+img {
+
+  height: 180px;
 }
 
-footer{
-  position: absolute;
-}
+
 /*===============
 Id Selectors
 ===============*/
@@ -50,34 +64,45 @@ Id Selectors
 /*===============
 Class Selectors
 ===============*/
+
+
+
+/* small media search bar*/
 .search{
- display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
+  width: 90%;
+  margin: 15px auto;
 }
 
-.inner-wrapper ul{
+/* .inner-wrapper ul{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+} */
+
+/* center div inside parent <main> */
+.inner-wrapper{
+  margin:0 auto;
+  width: 100%;
+
+
 }
 
-.inner-wrapper li{
+
+/* .inner-wrapper li{
   position: relative;
   overflow: hidden;
   width: 25%;
   height: auto;
+} */
+.inner-wrapper li{
+  margin-top: 5%;
 }
 
-.inner-wrapper li img{
+/* .inner-wrapper li img{
   display: block;
   width: 90%;
-}
-.gray-bar{
-  background-color: silver;
-  height: 8px;
-  width: 100%;
-}
+} */
+
 
 
 /*===============
@@ -96,8 +121,52 @@ Pseudo-class Selectors (interactive)
 /*===============
 Media Queries
 ===============*/
-@media (min-width:768px){
-
+@media (min-width: 640px){
+  .inner-wrapper ul {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .inner-wrapper ul{
+  display: grid;
+  margin:0 auto;
+  grid-gap: 2%;
+  width: 80%;
+  }
+  img {
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+  }
+  .search{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   margin-top: 25px;
+  }
+  input{
+    width: 50%;
   }
 
+}
+@media (min-width: 768px) {
+    .inner-wrapper ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .inner-wrapper ul{
+    display: grid;
+    margin:0 auto;
+    grid-gap: 2%;
+    width: 80%;
+    }
+    img {
+      object-fit: cover;
+      width: 180px;
+      height: 180px;
+    }
+}
+
+@media (min-width: 992px) {
+    .inner-wrapper ul {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
