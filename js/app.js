@@ -9,9 +9,8 @@
 
 let input = document.getElementById('search');
 let search;
-let caption = document.querySelectorAll('a[data-title]')[1];
-// let caption = image.getAttribute('data-title');
-
+let image = document.querySelectorAll('a[data-title]');
+let caption;
                 // let match = document.querySelectorAll('li a');
                 // match= match.getAttribute('data-title');
 
@@ -21,9 +20,10 @@ let caption = document.querySelectorAll('a[data-title]')[1];
     input.addEventListener('keyup', function(event){
 
       search = input.value.toLowerCase();
+      caption = image.getAttribute("data-title");
 
       for (let i = 0; i < caption.length; i++ ){
-        if (caption[i].getAttribute('data-title').toLowerCase().includes(search)){
+        if (caption[i].getAttribute("data-title").toLowerCase().includes(search)){
           console.log(caption[i]);
         //   caption[i].style.display='';
         // } else {
